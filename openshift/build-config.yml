@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: ruby
+  namespace: ninech
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: ruby:latest
+      namespace: ninech
+  postCommit:
+    script: '/usr/bin/ruby2.3 --version'
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: master
+      uri: https://github.com/ninech/baseimage-ruby
+    type: Git
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: DockerImage
+        name: 'ubuntu:xenial'
+      forcePull: true
+  triggers:
+    - type: ConfigChange
+    - type: GitHub
+      github:
+        secret: <DEFINE SECRET>
