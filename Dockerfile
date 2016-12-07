@@ -1,27 +1,21 @@
 FROM ubuntu:xenial
 MAINTAINER development@nine.ch
 
-ENV RUBY_VERSION=2.3
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get -qq update && apt-get -qq install -y \
-  build-essential \
-  software-properties-common
-
-RUN apt-add-repository ppa:brightbox/ruby-ng \
-    && apt-get -qq update \
-    && apt-get -qq install -y \
-      ruby${RUBY_VERSION} ruby${RUBY_VERSION}-dev \
+RUN apt-get update &&  apt-get -qq install -y \
+      ruby ruby-dev \
       libpq-dev postgresql-client \
       mysql-client \
       python-setuptools\
       netcat-openbsd \
       git \
       nodejs nodejs-legacy \
-    && apt-get autoremove -y \
-    && rm -rf /var/lib/apt/lists/*
+      xvfb qt5-default libqt5webkit5-dev libqtwebkit-dev \
+    && apt-get clean -y \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN gem install bundler
+RUN gem install bundler --no-document
 
 # Create base directory for the application
 RUN mkdir -p /app
