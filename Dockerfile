@@ -7,7 +7,6 @@ RUN apt-get update &&  apt-get -qq install -y \
       ruby ruby-dev \
       libpq-dev postgresql-client \
       mysql-client \
-      python-setuptools\
       netcat-openbsd \
       git \
       nodejs nodejs-legacy \
@@ -16,6 +15,9 @@ RUN apt-get update &&  apt-get -qq install -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN gem install bundler --no-document
+
+# Helper scripts
+COPY bin/waitfor /usr/bin/
 
 # Create base directory for the application
 RUN mkdir -p /app

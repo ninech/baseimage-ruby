@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Waits for a specific service to be available
+# waitfor <host> <port>
+
+until nc -z $1 $2; do
+    echo "$(date) - waiting for $1:$2..."
+    sleep 1
+done
