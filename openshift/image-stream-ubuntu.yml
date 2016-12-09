@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ImageStream
+metadata:
+  name: ubuntu
+  namespace: ninech
+spec:
+  dockerImageRepository: registry.hub.docker.com/library/ubuntu
+  tags:
+    -
+      name: 'xenial'
+      from:
+        kind: DockerImage
+        name: 'ubuntu:xenial'

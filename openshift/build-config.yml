@@ -4,6 +4,13 @@ metadata:
   name: ruby
   namespace: ninech
 spec:
+  triggers:
+    - type: ConfigChange
+    - type: GitHub
+      github:
+        secret: <DEFINE A SECRET>
+    - type: ImageChange
+      imageChange:
   output:
     to:
       kind: ImageStreamTag
@@ -14,19 +21,15 @@ spec:
   resources: {}
   runPolicy: Serial
   source:
-    git:
-      ref: master
-      uri: https://github.com/ninech/baseimage-ruby
     type: Git
+    git:
+      uri: 'https://github.com/ninech/baseimage-ruby'
+      ref: master
   strategy:
     type: Docker
     dockerStrategy:
       from:
         kind: DockerImage
+        namespace: ninech
         name: 'ubuntu:xenial'
       forcePull: true
-  triggers:
-    - type: ConfigChange
-    - type: GitHub
-      github:
-        secret: <DEFINE SECRET>
