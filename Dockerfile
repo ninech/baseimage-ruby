@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM docker-registry-default.nine.ch/ninech/ubuntu:xenial
 MAINTAINER development@nine.ch
 
 ENV DEBIAN_FRONTEND=noninteractive
