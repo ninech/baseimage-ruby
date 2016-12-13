@@ -18,7 +18,7 @@ RUN apt-get update &&  apt-get -qq install -y \
 RUN gem install bundler --no-document
 
 # Helper scripts
-COPY bin/waitfor /usr/bin/
+COPY scripts/waitfor /usr/local/bin/
 
 # Create base directory for the application
 RUN mkdir -p /app
