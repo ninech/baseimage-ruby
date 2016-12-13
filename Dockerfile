@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update &&  apt-get -qq install -y \
       ruby ruby-dev \
       libpq-dev postgresql-client \
-      mysql-client \
+      libmysqlclient-dev mysql-client \
       netcat-openbsd \
       git \
       nodejs nodejs-legacy \
