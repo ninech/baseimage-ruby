@@ -12,6 +12,11 @@ The working directory is set to `/app`. So you have to copy your app into that d
 
 ## Helper Scripts
 
-`waitfor` waits for a specific service to come up. Use it in your start scripts to wait for a service:
+`waitfortcp` waits for a specific service to come up. Use it in your start scripts to wait for a service:
 
-    waitfor mysql 3306
+    waitfortcp mysql 3306
+
+`waitforpg` waits for Postgres to be fully up and running. Configuration is done via environment variables.
+
+    export POSTGRES_HOST=postgres
+    waitforpg
