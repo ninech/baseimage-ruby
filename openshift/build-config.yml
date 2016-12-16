@@ -25,6 +25,8 @@ spec:
     git:
       uri: 'https://github.com/ninech/baseimage-ruby'
       ref: master
+    sourceSecret:
+      name: github-token
   strategy:
     type: Docker
     dockerStrategy:
