@@ -17,7 +17,7 @@ spec:
       name: ruby:latest
       namespace: ninech
   postCommit:
-    script: '/usr/bin/ruby2.3 --version'
+    script: '/usr/bin/ruby --version'
   resources: {}
   runPolicy: Serial
   source:
