@@ -12,7 +12,6 @@ RUN apt-get update &&  apt-get -qq install -y \
       nodejs nodejs-legacy \
       xvfb qt5-default libqt5webkit5-dev libqtwebkit-dev \
       build-essential \
-    && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN gem install bundler --no-document
