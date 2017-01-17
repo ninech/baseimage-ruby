@@ -18,7 +18,7 @@ RUN    apt-get update \
       build-essential \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN gem install bundler --no-document
+RUN gem install bundler --no-ri --no-rdoc
 
 # Helper scripts
 COPY scripts/* /usr/local/bin/

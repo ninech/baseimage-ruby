@@ -1,20 +1,20 @@
 apiVersion: v1
 kind: BuildConfig
 metadata:
-  name: ruby
+  name: ruby-trusty
   namespace: ninech
 spec:
   triggers:
     - type: ConfigChange
-    - type: GitHub
-      github:
-        secret: <DEFINE A SECRET>
     - type: ImageChange
       imageChange:
+        from:
+          kind: ImageStreamTag
+          name: 'ubuntu:trusty'
   output:
     to:
       kind: ImageStreamTag
-      name: ruby:latest
+      name: ruby:trusty
       namespace: ninech
   postCommit:
     script: '/usr/bin/ruby --version'
@@ -31,7 +31,9 @@ spec:
     type: Docker
     dockerStrategy:
       from:
-        kind: DockerImage
+        kind: ImageStreamTag
         namespace: ninech
-        name: 'ubuntu:xenial'
+        name: 'ubuntu:trusty'
       forcePull: true
+  postCommit:
+    script: '/usr/bin/ruby2.3 --version'

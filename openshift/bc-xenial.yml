@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: ruby-xenial
+  namespace: ninech
+spec:
+  triggers:
+    - type: ConfigChange
+    - type: GitHub
+      github:
+        secret: <Github Secret>
+    - type: ImageChange
+      imageChange:
+        from:
+          kind: ImageStreamTag
+          name: 'ubuntu:xenial'
+  runPolicy: Serial
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/ninech/baseimage-ruby'
+      ref: master
+    sourceSecret:
+      name: github-token
+  strategy:
+    type: Docker
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: ninech
+        name: 'ubuntu:xenial'
+      forcePull: true
+  output:
+    to:
+      kind: ImageStreamTag
+      namespace: ninech
+      name: 'ruby:xenial'
+  postCommit:
+    script: '/usr/bin/ruby2.3 --version'
