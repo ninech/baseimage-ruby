@@ -9,7 +9,7 @@ RUN apt-get update &&  apt-get -qq install -y \
       libmysqlclient-dev mysql-client \
       netcat-openbsd \
       git \
-      nodejs nodejs-legacy \
+      nodejs nodejs-legacy npm \
       xvfb qt5-default libqt5webkit5-dev libqtwebkit-dev \
       build-essential \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
