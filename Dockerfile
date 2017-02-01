@@ -22,8 +22,9 @@ RUN apt-get update &&  apt-get -qq install -y \
 # Install a recent bundler version
 RUN gem install bundler --no-document
 
-# Helper scripts
+# Helper scripts and configs
 COPY scripts/* /usr/local/bin/
+COPY rspec-config /root/.rspec
 
 # Create base directory for the application
 RUN mkdir -p /app
