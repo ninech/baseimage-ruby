@@ -1,0 +1,6 @@
+Pry.config.color = true
+Pry.config.theme = "solarized"
+
+if defined?(PryRails::RAILS_PROMPT)
+  Pry.config.prompt = PryRails::RAILS_PROMPT
+end
