@@ -6,8 +6,8 @@
 
 if echo "use $1; show tables" | mysql --host=${MYSQL_HOST:-mysql} --user=${MYSQL_USER:-root} --password=${MYSQL_PASSWORD:-root} | grep schema_migrations 2>&1 > /dev/null
 then
-  echo "🐋 Database exists, doing nothing."
+  echo "🐬 Database exists, doing nothing."
 else
-  echo "🐋 Setup Database"
+  echo "🐬 Setup Database"
   bundle exec rake db:setup
 fi
