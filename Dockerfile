@@ -25,6 +25,7 @@ RUN gem install bundler --no-document
 # Helper scripts and configs
 COPY scripts/* /usr/local/bin/
 COPY rspec-config /root/.rspec
+COPY pry-config /root/.pryrc
 
 # Create base directory for the application
 RUN mkdir -p /app
