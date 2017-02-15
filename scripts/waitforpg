@@ -1,6 +1,6 @@
 #!/bin/sh
 # Usage: waitforpg
-# expected ENV: POSTGRES_HOST, POSTGRES_PORT,  POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD
+# expected ENV: POSTGRES_HOST, POSTGRES_PORT, POSTGRES_DB, POSTGRES_USER, POSTGRES_PASSWORD
 # Description:
 # Waits for postgres to be fully up and running
 
