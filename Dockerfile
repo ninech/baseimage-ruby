@@ -32,4 +32,4 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # Create the logs folder
-RUN mkdir -p /app/log/
+VOLUME ["/app/log"]
