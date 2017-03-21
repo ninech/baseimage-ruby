@@ -20,6 +20,9 @@ RUN apt-get update &&  apt-get -qq install -y \
       dbus gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+# Needed by xvfb-run or teaspoon
+RUN dbus-uuidgen > /var/lib/dbus/machine-id
+
 # Install a recent bundler version
 RUN gem install bundler --no-document
 
