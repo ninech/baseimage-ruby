@@ -17,6 +17,7 @@ RUN apt-get update &&  apt-get -qq install -y \
       nodejs nodejs-legacy npm \
       xvfb qt5-default libqt5webkit5-dev libqtwebkit-dev \
       build-essential \
+      dbus gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install a recent bundler version
