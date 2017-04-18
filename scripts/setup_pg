@@ -11,7 +11,7 @@ then
   echo "🐘 Database exists, doing nothing."
 else
   echo "🐘 Setup Database"
-  bundle exec rake db:setup
+  bundle exec rake db:setup db:test:prepare
 fi
 
 unset $PGPASSWORD
