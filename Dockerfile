@@ -1,14 +1,11 @@
-FROM docker-registry-default.nine.ch/ninech/ubuntu:xenial
+FROM docker-registry.nine.ch/ninech/ubuntu:xenial
 MAINTAINER development@nine.ch
-
-# Set the locale
-RUN locale-gen en_US.UTF-8
-ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install essential dev tools
 RUN apt-get update &&  apt-get -qq install -y \
+      locales \
       ruby ruby-dev \
       libpq-dev postgresql-client \
       libmysqlclient-dev mysql-client \
@@ -19,6 +16,10 @@ RUN apt-get update &&  apt-get -qq install -y \
       build-essential \
       dbus gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Set the locale
+RUN locale-gen en_US.UTF-8
+ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 
 # Needed by xvfb-run or teaspoon
 RUN dbus-uuidgen > /var/lib/dbus/machine-id

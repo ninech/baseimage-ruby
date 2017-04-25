@@ -1,4 +1,4 @@
-FROM docker-registry-default.nine.ch/ninech/ubuntu:trusty
+FROM docker-registry.nine.ch/ninech/ubuntu:trusty
 MAINTAINER development@nine.ch
 
 # Set the locale
