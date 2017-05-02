@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install essential dev tools
 RUN apt-get update &&  apt-get -qq install -y \
-      locales \
+      locales tzdata \
       ruby ruby-dev \
       libpq-dev postgresql-client \
       libmysqlclient-dev mysql-client \
