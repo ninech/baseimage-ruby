@@ -29,6 +29,7 @@ RUN gem install bundler --no-document
 
 # Pre-install some widely used gems
 RUN gem install nokogiri -v '1.7.1'
+RUN gem install pg -v '0.20.0'
 
 # Helper scripts and configs
 COPY scripts/* /usr/local/bin/
