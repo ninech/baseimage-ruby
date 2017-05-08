@@ -27,6 +27,9 @@ RUN dbus-uuidgen > /var/lib/dbus/machine-id
 # Install a recent bundler version
 RUN gem install bundler --no-document
 
+# Pre-install some widely used gems
+RUN gem install nokogiri -v '1.7.1'
+
 # Helper scripts and configs
 COPY scripts/* /usr/local/bin/
 COPY rspec-config /root/.rspec
