@@ -33,6 +33,7 @@ RUN dbus-uuidgen > /var/lib/dbus/machine-id
 
 # Install a recent bundler version
 RUN gem install bundler --no-ri --no-rdoc
+RUN bundle config jobs 2
 
 # Pre-install some widely used gems
 RUN gem install --no-document nokogiri -v '1.7.1' && \
