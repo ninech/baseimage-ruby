@@ -28,8 +28,9 @@ RUN dbus-uuidgen > /var/lib/dbus/machine-id
 RUN gem install bundler --no-document
 
 # Pre-install some widely used gems
-RUN gem install nokogiri -v '1.7.1'
-RUN gem install pg -v '0.20.0'
+RUN gem install --no-document nokogiri -v '1.7.1' && \
+    gem install --no-document pg -v '0.20.0' && \
+    gem install --no-document capybara-webkit -v '1.14.0'
 
 # Helper scripts and configs
 COPY scripts/* /usr/local/bin/
