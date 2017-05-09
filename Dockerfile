@@ -3,6 +3,9 @@ MAINTAINER development@nine.ch
 
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN echo 'APT::Install-Recommends "0";' > /etc/apt/apt.conf.d/01norecommend; \
+    echo 'APT::Install-Suggests "0";' > /etc/apt/apt.conf.d/01nosuggests
+
 # Install essential dev tools
 RUN apt-get update &&  apt-get -qq install -y \
       locales tzdata \
