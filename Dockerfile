@@ -33,6 +33,7 @@ RUN bundle config jobs 2
 
 # Pre-install some widely used gems
 RUN gem install --no-document nokogiri -v '1.7.1' && \
+    gem install --no-document nokogiri -v '1.7.2' && \
     gem install --no-document pg -v '0.20.0' && \
     gem install --no-document capybara-webkit -v '1.14.0'
 
