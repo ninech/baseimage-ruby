@@ -35,7 +35,10 @@ RUN bundle config jobs 2
 RUN gem install --no-document nokogiri -v '1.7.1' && \
     gem install --no-document nokogiri -v '1.7.2' && \
     gem install --no-document pg -v '0.20.0' && \
-    gem install --no-document capybara-webkit -v '1.14.0'
+    gem install --no-document capybara-webkit -v '1.14.0' && \
+    gem install --no-document rails -v '5.1.1' && \
+    gem install --no-document rails -v '5.0.3' && \
+    gem install --no-document rails -v '4.2.8'
 
 # Helper scripts and configs
 COPY scripts/* /usr/local/bin/
