@@ -31,14 +31,9 @@ RUN dbus-uuidgen > /var/lib/dbus/machine-id
 RUN gem install bundler --no-document
 RUN bundle config jobs 2
 
-# Pre-install some widely used gems
-RUN gem install --no-document nokogiri -v '1.7.2' && \
-    gem install --no-document nokogiri -v '1.8.0' && \
-    gem install --no-document pg -v '0.20.0' && \
-    gem install --no-document capybara-webkit -v '1.14.0' && \
-    gem install --no-document rails -v '5.1.1' && \
-    gem install --no-document rails -v '5.0.3' && \
-    gem install --no-document rails -v '4.2.8'
+# Pre-install some gems
+COPY scripts/install-gems.sh /usr/local/bin/install-gems
+RUN install-gems && rm /usr/local/bin/install-gems
 
 # Helper scripts and configs
 COPY scripts/* /usr/local/bin/
