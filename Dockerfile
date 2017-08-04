@@ -28,6 +28,7 @@ ENV LANG=en_US.UTF-8 LANGUAGE=en_US:en LC_ALL=en_US.UTF-8
 RUN dbus-uuidgen > /var/lib/dbus/machine-id
 
 # Install a recent bundler version
+ENV BUNDLE_SILENCE_ROOT_WARNING=1
 RUN gem install bundler --no-document
 RUN bundle config jobs 2
 

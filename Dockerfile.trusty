@@ -32,6 +32,7 @@ RUN    apt-get update \
 RUN dbus-uuidgen > /var/lib/dbus/machine-id
 
 # Install a recent bundler version
+ENV BUNDLE_SILENCE_ROOT_WARNING=1
 RUN gem install bundler --no-ri --no-rdoc
 RUN bundle config jobs 2
 
