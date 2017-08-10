@@ -20,3 +20,7 @@ The working directory is set to `/app`. So you have to copy your app into that d
 
     export POSTGRES_HOST=postgres
     waitforpg
+
+`setup_pg` initializes a Rails app's Postgresql database. It checks if the database exists and does nothing if the database is already there.
+
+`setup_mysql` initializes a Rails app's MySQL database. It checks if the database exists and does nothing if the database is already there.
