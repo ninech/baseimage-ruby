@@ -42,6 +42,8 @@ RUN install-gems && rm /usr/local/bin/install-gems
 # Helper scripts and configs
 COPY scripts/* /usr/local/bin/
 COPY rspec-config /root/.rspec
+COPY pry-config /root/.pryrc
+COPY bash_aliases /root/.bash_aliases
 
 # Create base directory for the application
 RUN mkdir -p /app
