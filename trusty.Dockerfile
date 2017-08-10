@@ -32,18 +32,17 @@ RUN dbus-uuidgen > /var/lib/dbus/machine-id
 
 # Install a recent bundler version
 ENV BUNDLE_SILENCE_ROOT_WARNING=1
-RUN gem install bundler --no-ri --no-rdoc
-RUN bundle config jobs 2
-
-# Pre-install some gems
-COPY scripts/install-gems.sh /usr/local/bin/install-gems
-RUN install-gems && rm /usr/local/bin/install-gems
+RUN    gem install bundler --no-ri --no-rdoc \
+    && bundle config jobs 2
 
 # Helper scripts and configs
 COPY scripts/* /usr/local/bin/
 COPY rspec-config /root/.rspec
 COPY pry-config /root/.pryrc
 COPY bash_aliases /root/.bash_aliases
+
+RUN    install-gems.sh \
+    && configure-git.sh
 
 # Create base directory for the application
 RUN mkdir -p /app
