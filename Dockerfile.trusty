@@ -1,5 +1,4 @@
 FROM docker-registry.nine.ch/ninech/ubuntu:trusty
-MAINTAINER development@nine.ch
 
 # Set the locale
 RUN locale-gen en_US.UTF-8
