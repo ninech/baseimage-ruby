@@ -20,3 +20,22 @@ The working directory is set to `/app`. So you have to copy your app into that d
 
     export POSTGRES_HOST=postgres
     waitforpg
+
+`setup_pg` initializes a Rails app's Postgresql database. It checks if the database exists and does nothing if the database is already there.
+
+`setup_mysql` initializes a Rails app's MySQL database. It checks if the database exists and does nothing if the database is already there.
+
+## Aliases
+
+The following aliases can be used in Bash:
+
+* `bi`: bundle install
+* `be`: bundle exec
+* `rc`: bundle exec rails console
+* `ttr`: touch tmp/restart.txt
+
+The following Git alises exist:
+
+* `git co`: Short for `git checkout`
+* `git l`: Some nicer looking and more compact `git log`
+* `git s`: A short version of `git status`
