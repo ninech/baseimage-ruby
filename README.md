@@ -39,3 +39,9 @@ The following Git alises exist:
 * `git co`: Short for `git checkout`
 * `git l`: Some nicer looking and more compact `git log`
 * `git s`: A short version of `git status`
+
+## About
+
+This docker image is currently maintained and funded by [nine](https://nine.ch).
+
+[![logo of the company 'nine'](https://logo.apps.at-nine.ch/Dmqied_eSaoBMQwk3vVgn4UIgDo=/trim/500x0/logo_claim.png)](https://www.nine.ch)
