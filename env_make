@@ -1,0 +1,6 @@
+NS = docker-registry.nine.ch/ninech
+VERSION ?= trusty
+
+REPO = ruby
+NAME = ruby
+INSTANCE = head

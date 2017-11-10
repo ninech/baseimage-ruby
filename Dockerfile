@@ -44,5 +44,6 @@ RUN    install-gems.sh \
 RUN mkdir -p /app
 WORKDIR /app
 
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 # Create the logs folder
 RUN mkdir -p /app/log/
