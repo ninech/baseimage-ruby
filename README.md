@@ -40,6 +40,15 @@ The following Git alises exist:
 * `git l`: Some nicer looking and more compact `git log`
 * `git s`: A short version of `git status`
 
+## Rubymine
+
+This image can be used with rubymine to test and debug applications
+
+To enable debugging nothing further is needed, provided that your application includes the [appropriate debugging gems](https://blog.jetbrains.com/ruby/2017/06/rubymine-2017-2-eap-5-debugging-with-docker-compose/).
+
+To enable testing set the environmental variable RUBYMINE_TESTS to true.
+If your application requires bootstrapping scripts to run before debugging is started place them in the container dir /app/docker/boostrap/ and they will be auto sourced
+
 ## About
 
 This docker image is currently maintained and funded by [nine](https://nine.ch).
